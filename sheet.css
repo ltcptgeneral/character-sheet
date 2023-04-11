@@ -1,0 +1,56 @@
+:root {
+	--page-color: antiquewhite;
+	--background-color: white;
+	--text-color: black;
+	--shadow-color: black;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+div.flex {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+}
+
+div.grid {
+	display: grid;
+	align-items: center;
+	gap: 10px;
+}
+
+body {
+	min-height: 100vh;
+	background-color: var(--background-color);
+	padding: 20px;
+}
+
+main {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: var(--page-color);
+	color: var(--text-color);
+	padding: 10px;
+	border: 1px solid var(--text-color);
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px var(--shadow-color);
+	width: fit-content;
+	max-width: max(50%, 720px);
+}
+
+main > form > * {
+	margin-top: 10px;
+}
+
+input, select {
+	width: fit-content;
+	margin-left: 10px;
+}
+
+h1 {
+	text-align: center;
+}

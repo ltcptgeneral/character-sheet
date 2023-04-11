@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="sheet.css">
+		<script src="sheet.js" type="module"></script>
+	</head>
+	<body>
+		<main>
+			<h1>Songs of the Second Age: Character Sheet</h1>
+			<form>
+				<div class="flex">
+					<label>Player<input name="player" type="text"></label>
+					<label>Name<input name="player" type="text"></label>
+					<label>Level<input name="player" type="text"></label>
+					<label>Species<input name="player" type="text"></label>
+					<label>Background<input name="player" type="text"></label>
+					<label>Class<input name="player" type="text"></label>
+				</div>
+				<div class="grid" style="grid-template-columns: 1fr auto;">
+					<div class="grid" style="grid-template-columns: auto 1fr;">
+						<label for="health">Health</label><input id="health" name="health" type="number">
+						<label for="stamina">Stamina</label><input id="stamina" name="stamina" type="number">
+					</div>
+					<div class="grid" style="grid-template-columns: 1fr;">
+						<label>Deathrolls</label>
+						<div class="grid" style="grid-template-columns: auto auto auto auto auto auto auto auto;">
+							<label>W</label><input type="checkbox">
+							<label>S</label><input type="checkbox">
+							<label>D</label><input type="checkbox">
+							<label>I</label><input type="checkbox">
+						</div>
+					</div>
+				</div>
+			</form>
+		</main>
+	</body>
+</html>
