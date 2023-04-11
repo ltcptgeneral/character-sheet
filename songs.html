@@ -11,12 +11,12 @@
 			<h1>Songs of the Second Age: Character Sheet</h1>
 			<form>
 				<div class="flex">
-					<label>Player<input name="player" type="text"></label>
-					<label>Name<input name="player" type="text"></label>
-					<label>Level<input name="player" type="text"></label>
-					<label>Species<input name="player" type="text"></label>
-					<label>Background<input name="player" type="text"></label>
-					<label>Class<input name="player" type="text"></label>
+					<label>Player<input id="player" name="player" type="text"></label>
+					<label>Name<input id="name" name="name" type="text"></label>
+					<label>Level<input id="level" name="level" type="text"></label>
+					<label>Species<input id="species" name="species" type="text"></label>
+					<label>Background<input id="background" name="background" type="text"></label>
+					<label>Class<input id="class" name="class" type="text"></label>
 				</div>
 				<div class="grid" style="grid-template-columns: 1fr auto;">
 					<div class="grid" style="grid-template-columns: auto 1fr;">
@@ -32,6 +32,20 @@
 							<label>I</label><input type="checkbox">
 						</div>
 					</div>
+				</div>
+				<div class="grid" style="grid-template-columns: auto auto auto auto auto auto;">
+					<label for="str"><u>Str</u>ength</label>
+					<label for="end"><u>End</u>urance</label>
+					<label for="agi"><u>Agi</u>lity</label>
+					<label for="wit"><u>Wit</u>s</label>
+					<label for="int"><u>Int</u>elligence</label>
+					<label for="cha"><u>Cha</u>risma</label>
+					<input id="str" name="str" type="number">
+					<input id="end" name="end" type="number">
+					<input id="agi" name="agi" type="number">
+					<input id="wit" name="wit" type="number">
+					<input id="int" name="int" type="number">
+					<input id="cha" name="cha" type="number">
 				</div>
 			</form>
 		</main>

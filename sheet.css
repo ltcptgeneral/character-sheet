@@ -48,7 +48,14 @@ main > form > * {
 
 input, select {
 	width: fit-content;
-	margin-left: 10px;
+}
+
+input[type="number"] {
+	width: 6em;
+}
+
+label > input {
+	margin-left: 10px;;
 }
 
 h1 {
