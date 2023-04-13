@@ -3,49 +3,47 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="sheet.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<script src="sheet.js" type="module"></script>
 	</head>
 	<body>
-		<main>
-			<h1>Songs of the Second Age: Character Sheet</h1>
-			<form>
-				<div class="flex">
-					<label>Player<input id="player" name="player" type="text"></label>
-					<label>Name<input id="name" name="name" type="text"></label>
-					<label>Level<input id="level" name="level" type="text"></label>
-					<label>Species<input id="species" name="species" type="text"></label>
-					<label>Background<input id="background" name="background" type="text"></label>
-					<label>Class<input id="class" name="class" type="text"></label>
+		<main class="w3-container w3-card-4 w3-display-middle w3-padding">
+			<h1 class="w3-center">Songs of the Second Age: Character Sheet</h1>
+			<form class="w3-container">
+				<div class="w3-container">
+					<label>Player<input class="w3-input w3-border" id="player" name="player" type="text"></label>
+					<label>Name<input class="w3-input w3-border" id="name" name="name" type="text"></label>
+					<label>Level<input class="w3-input w3-border" id="level" name="level" type="text"></label>
+					<label>Species<input class="w3-input w3-border" id="species" name="species" type="text"></label>
+					<label>Background<input class="w3-input w3-border" id="background" name="background" type="text"></label>
+					<label>Class<input class="w3-input w3-border" id="class" name="class" type="text"></label>
 				</div>
-				<div class="grid" style="grid-template-columns: 1fr auto;">
-					<div class="grid" style="grid-template-columns: auto 1fr;">
-						<label for="health">Health</label><input id="health" name="health" type="number">
-						<label for="stamina">Stamina</label><input id="stamina" name="stamina" type="number">
-					</div>
-					<div class="grid" style="grid-template-columns: 1fr;">
-						<label>Deathrolls</label>
-						<div class="grid" style="grid-template-columns: auto auto auto auto auto auto auto auto;">
-							<label>W</label><input type="checkbox">
-							<label>S</label><input type="checkbox">
-							<label>D</label><input type="checkbox">
-							<label>I</label><input type="checkbox">
-						</div>
+				<div class="w3-container">
+					<label for="health">Health</label><input class="w3-input w3-border" id="health" name="health" type="number">
+					<label for="stamina">Stamina</label><input class="w3-input w3-border" id="stamina" name="stamina" type="number">
+				</div>
+				<div class="w3-container">
+					<label>Deathrolls</label>
+					<div class="w3-container">
+						<label>W</label><input class="w3-input w3-border" type="checkbox">
+						<label>S</label><input class="w3-input w3-border" type="checkbox">
+						<label>D</label><input class="w3-input w3-border" type="checkbox">
+						<label>I</label><input class="w3-input w3-border" type="checkbox">
 					</div>
 				</div>
-				<div class="grid" style="grid-template-columns: auto auto auto auto auto auto;">
+				<div class="w3-container">
 					<label for="str"><u>Str</u>ength</label>
 					<label for="end"><u>End</u>urance</label>
 					<label for="agi"><u>Agi</u>lity</label>
 					<label for="wit"><u>Wit</u>s</label>
 					<label for="int"><u>Int</u>elligence</label>
 					<label for="cha"><u>Cha</u>risma</label>
-					<input id="str" name="str" type="number">
-					<input id="end" name="end" type="number">
-					<input id="agi" name="agi" type="number">
-					<input id="wit" name="wit" type="number">
-					<input id="int" name="int" type="number">
-					<input id="cha" name="cha" type="number">
+					<input class="w3-input w3-border" id="str" name="str" type="number">
+					<input class="w3-input w3-border" id="end" name="end" type="number">
+					<input class="w3-input w3-border" id="agi" name="agi" type="number">
+					<input class="w3-input w3-border" id="wit" name="wit" type="number">
+					<input class="w3-input w3-border" id="int" name="int" type="number">
+					<input class="w3-input w3-border" id="cha" name="cha" type="number">
 				</div>
 			</form>
 		</main>
