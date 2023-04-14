@@ -193,15 +193,100 @@ let rpModifiers = [
 	}
 ]
 
+let features = [
+	{
+		name: "Core Species",
+		level: 1
+	},
+	{
+		name: "Species",
+		level: 1
+	},
+	{
+		name: "Cornerstone",
+		level: 1
+	},
+	{
+		name: "Cornerstone",
+		level: 1
+	},
+	{
+		name: "Novice",
+		level: 1
+	},
+	{
+		name: "Novice",
+		level: 2
+	},
+	{
+		name: "Novice",
+		level: 3
+	},
+	{
+		name: "Novice",
+		level: 4
+	},
+	{
+		name: "Apprentice",
+		level: 5
+	},
+	{
+		name: "Apprentice",
+		level: 6
+	},
+	{
+		name: "Apprentice",
+		level: 7
+	},
+	{
+		name: "Journeyman",
+		level: 9
+	},
+	{
+		name: "Journeyman",
+		level: 10
+	},
+	{
+		name: "Journeyman",
+		level: 11
+	},
+	{
+		name: "Expert",
+		level: 13
+	},
+	{
+		name: "Expert",
+		level: 14
+	},
+	{
+		name: "Expert",
+		level: 15
+	},
+	{
+		name: "Master",
+		level: 17
+	},
+	{
+		name: "Master",
+		level: 18
+	},
+	{
+		name: "Capstone",
+		level: 20
+	}
+	
+]
+
 function init () {
-	populateModifiers("#combat-modifiers", combatModifiers);
-	window.setInterval(() => { setAllValues(combatModifiers) }, 250);
-	populateModifiers("#rp-modifiers", rpModifiers);
-	setAllValues(rpModifiers);
-	window.setInterval(() => { setAllValues(rpModifiers) }, 250);
+	buildModifiers("#combat-modifiers", combatModifiers);
+	window.setInterval(() => { calculateModifiers(combatModifiers) }, 250);
+	buildModifiers("#rp-modifiers", rpModifiers);
+	calculateModifiers(rpModifiers);
+	window.setInterval(() => { calculateModifiers(rpModifiers) }, 250);
+	buildFeatures("#features", features);
 }
 
-function populateModifiers(container, data) {
+function buildModifiers(container, data) {
 	let area = document.querySelector(container);
 	for (let i in data) {
 		let category = data[i];
@@ -235,7 +320,21 @@ function populateModifiers(container, data) {
 	}
 }
 
-function setAllValues (data) {
+function buildFeatures (container) {
+	let area = document.querySelector(container);
+	for (let i in features) {
+		let feature = features[i];
+		area.innerHTML += `
+			<p>${feature.name}</p>
+			<p>${feature.level}</p>
+			<div class="grow-wrap">
+				<textarea id="features-${i}" placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+			</div>
+		`;
+	}
+}
+
+function calculateModifiers (data) {
 	for (let i in data) {
 		let category = data[i];
 		for (let j in data[i].items) {

@@ -34,13 +34,13 @@ div.flex {
 	gap: 10px;
 }
 
-div.grid {
+.grid {
 	display: grid;
 	align-items: center;
 	gap: 10px;
 }
 
-div.nowrap {
+.nowrap {
 	flex-wrap: nowrap;
 }
 
@@ -52,7 +52,7 @@ hr {
 }
 
 @media (max-width: 600px) {
-	div.mobile {
+	.mobile {
 		display: block;
 	}
 	hr {
@@ -78,13 +78,13 @@ body {
 	width: 80ch;
 }
 
-.page > form > * {
+section {
 	border-bottom: 1px solid var(--text-color);
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 
-.page > form > *:last-child {
+section:last-child {
 	border-bottom: none;
 }
 
