@@ -256,5 +256,5 @@ function setModifierVal (category, name, value) {
 	e.training = Number(document.querySelector(`#${category}-${name}-training`).value);
 	e.mb = Number(document.querySelector(`#${category}-${name}-mb`).checked);
 	e.mastery = Number(document.querySelector("#mastery").value);
-	document.querySelector(`#${category}-${name}-result`).innerText = value(e);
+	document.querySelector(`#${category}-${name}-result`).innerText = ` = ${value(e)}`;
 }

@@ -9,56 +9,167 @@
 		<script src="sheet.js" type="module"></script>
 	</head>
 	<body style="padding: 16px;">
-		<main class="w3-container w3-card-4 w3-padding" style="max-width: 80ch; margin-left: auto; margin-right: auto;">
-			<h1 class="w3-center">Songs of the Second Age: Character Sheet</h1>
-			<form class="w3-container">
-				<div class="mobile grid" style="grid-template-columns: auto auto auto;">
-					<label>Player<input id="player" name="player" type="text"></label>
-					<label>Name<input id="name" name="name" type="text"></label>
-					<label>Level<input id="level" name="level" type="number"></label>
-					<label>Species<input id="species" name="species" type="text"></label>
-					<label>Background<input id="background" name="background" type="text"></label>
-					<label>Class<input id="class" name="class" type="text"></label>
+		<main>
+			<div class="page w3-container w3-card-4 w3-padding-16">
+				<h1 class="w3-center">Songs of the Second Age: Character Sheet</h1>
+				<form class="w3-container">
+					<div class="mobile grid" style="grid-template-columns: auto auto auto;">
+						<label>Player<input id="player" name="player" type="text"></label>
+						<label>Name<input id="name" name="name" type="text"></label>
+						<label>Level<input id="level" name="level" type="number"></label>
+						<label>Species<input id="species" name="species" type="text"></label>
+						<label>Background<input id="background" name="background" type="text"></label>
+						<label>Class<input id="class" name="class" type="text"></label>
+					</div>
+					<div class="mobile grid" style="grid-template-columns: auto auto;">
+						<label>Health<input id="health" name="health" type="number"></label>
+						<label>Stamina<input id="stamina" name="stamina" type="number"></label>					
+						<div class="grid" style="grid-column: 1 / span 2; grid-template-columns: auto auto auto auto auto;">
+							<label>Deathrolls</label>
+							<label>W<input id="deathroll-w" name="deathroll-w" type="checkbox"></label>
+							<label>S<input id="deathroll-s" name="deathroll-s" type="checkbox"></label>
+							<label>D<input id="deathroll-d" name="deathroll-d" type="checkbox"></label>
+							<label>I<input id="deathroll-i" name="deathroll-i" type="checkbox"></label>
+						</div>				
+					</div>
+					<div class="mobile grid" style="grid-template-columns: repeat(6, calc((100% / 6) - 10px));">
+						<label style="flex-direction: column;"><p><u>Str</u>ength</p><input id="str" name="str" type="number"></label>
+						<label style="flex-direction: column;"><p><u>End</u>urance</p><input id="end" name="end" type="number"></label>
+						<label style="flex-direction: column;"><p><u>Agi</u>lity</p><input id="agi" name="agi" type="number"></label>
+						<label style="flex-direction: column;"><p><u>Wit</u>s</p><input id="wit" name="wit" type="number"></label>
+						<label style="flex-direction: column;"><p><u>Int</u>elligence</p><input id="int" name="int" type="number"></label>
+						<label style="flex-direction: column;"><p><u>Cha</u>risma</p><input id="cha" name="cha" type="number"></label>
+					</div>
+					<div class="mobile grid" style="grid-template-columns: repeat(6, calc((100% / 6) - 10px));">
+						<label style="flex-direction: column;">Armor<input id="armor" name="armor" type="number"></label>
+						<label style="flex-direction: column;">Soak<input id="soak" name="soak" type="number"></label>
+						<label style="flex-direction: column;">Speed<input id="speed" name="speed" type="number"></label>
+						<label style="flex-direction: column;">Initiative<input id="initiative" name="initiative" type="number"></label>
+						<label style="flex-direction: column;">Mastery<input id="mastery" name="mastery" type="number"></label>
+						<label for="bulk" style="flex-direction: column;">Bulk
+							<label class="none" for="max-bulk">Max Bulk</label>
+							<div class="flex" style="flex-wrap: nowrap;">
+								<input id="bulk" name="bulk" type="number">
+								<p>/</p>
+								<input id="max-bulk" name="max-bulk" type="number">
+							</div>
+						</label>
+					</div>
+					<div class="grid mobile" style="grid-template-columns: 1fr auto 1fr; align-items: start;">
+						<div class="grid" style="grid-template-columns: auto auto auto auto;" id="combat-modifiers"></div>
+						<hr>
+						<div class="grid" style="grid-template-columns: auto auto auto auto;" id="rp-modifiers"></div>
+					</div>
+					<div class="grow-wrap">
+						<textarea placeholder="Notes" onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="page w3-container w3-card-4 w3-padding-16">
+				<h2 class="w3-center">Character Features</h2>
+				<div class="grid" style="grid-template-columns: auto auto 1fr; column-gap: 20px; padding: 0px 16px;">
+					<p>Core Species</p>
+					<p>1</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Species</p>
+					<p>1</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Cornerstone</p>
+					<p>1</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Cornerstone</p>
+					<p>1</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Novice</p>
+					<p>1</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Novice</p>
+					<p>2</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Novice</p>
+					<p>3</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Novice</p>
+					<p>4</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Apprentice</p>
+					<p>5</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Apprentice</p>
+					<p>6</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Apprentice</p>
+					<p>7</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Journeyman</p>
+					<p>9</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Journeyman</p>
+					<p>10</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Journeyman</p>
+					<p>11</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Expert</p>
+					<p>13</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Expert</p>
+					<p>14</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Expert</p>
+					<p>15</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Master</p>
+					<p>17</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Master</p>
+					<p>18</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
+					<p>Capstone</p>
+					<p>20</p>
+					<div class="grow-wrap">
+						<textarea placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+					</div>
 				</div>
-				<div class="mobile grid" style="grid-template-columns: auto auto;">
-					<label>Health<input id="health" name="health" type="number"></label>
-					<label>Stamina<input id="stamina" name="stamina" type="number"></label>					
-					<div class="grid" style="grid-column: 1 / span 2; grid-template-columns: auto auto auto auto auto;">
-						<label>Deathrolls</label>
-						<label>W<input id="deathroll-w" name="deathroll-w" type="checkbox"></label>
-						<label>S<input id="deathroll-s" name="deathroll-s" type="checkbox"></label>
-						<label>D<input id="deathroll-d" name="deathroll-d" type="checkbox"></label>
-						<label>I<input id="deathroll-i" name="deathroll-i" type="checkbox"></label>
-					</div>				
-				</div>
-				<div class="mobile grid" style="grid-template-columns: repeat(6, calc((100% / 6) - 10px));">
-					<label style="flex-direction: column;"><p><u>Str</u>ength</p><input id="str" name="str" type="number"></label>
-					<label style="flex-direction: column;"><p><u>End</u>urance</p><input id="end" name="end" type="number"></label>
-					<label style="flex-direction: column;"><p><u>Agi</u>lity</p><input id="agi" name="agi" type="number"></label>
-					<label style="flex-direction: column;"><p><u>Wit</u>s</p><input id="wit" name="wit" type="number"></label>
-					<label style="flex-direction: column;"><p><u>Int</u>elligence</p><input id="int" name="int" type="number"></label>
-					<label style="flex-direction: column;"><p><u>Cha</u>risma</p><input id="cha" name="cha" type="number"></label>
-				</div>
-				<div class="mobile grid" style="grid-template-columns: repeat(6, calc((100% / 6) - 10px));">
-					<label style="flex-direction: column;">Armor<input id="armor" name="armor" type="number"></label>
-					<label style="flex-direction: column;">Soak<input id="soak" name="soak" type="number"></label>
-					<label style="flex-direction: column;">Speed<input id="speed" name="speed" type="number"></label>
-					<label style="flex-direction: column;">Initiative<input id="initiative" name="initiative" type="number"></label>
-					<label style="flex-direction: column;">Mastery<input id="mastery" name="mastery" type="number"></label>
-					<label for="bulk" style="flex-direction: column;">Bulk
-						<label class="none" for="max-bulk">Max Bulk</label>
-						<div class="flex" style="flex-wrap: nowrap;">
-							<input id="bulk" name="bulk" type="number">
-							<p>/</p>
-							<input id="max-bulk" name="max-bulk" type="number">
-						</div>
-					</label>
-				</div>
-				<div class="w3-row w3-mobile w3-row-padding w3-stretch" style="margin-top: 10px; margin-bottom: 10px;">
-					<div class="w3-half mobile grid" style="grid-template-columns: auto auto auto auto;" id="combat-modifiers"></div>
-					<div class="w3-half mobile grid" style="grid-template-columns: auto auto auto auto;" id="rp-modifiers"></div>
-				</div>
-			</form>
+			</div>
 		</main>
 	</body>
 </html>
