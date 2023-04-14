@@ -294,17 +294,19 @@ function init () {
 	calculateModifiers(rpModifiers)
 	calculateSpellCasting();;
 
-	data = serializeFormData("#character-data");
+	let inputs = document.querySelectorAll("input, select, textarea");
+	for (let i = 0; i < inputs.length; i++) {
+		inputs[i].addEventListener("input", refresh);
+	}
+}
+
+function refresh () {
+	calculateModifiers(combatModifiers);
+	calculateModifiers(rpModifiers);
+	calculateSpellCasting();
+
+	let data = serializeFormData("#character-data");
 	storeData(data);
-
-	window.setInterval(() => { 
-		calculateModifiers(combatModifiers);
-		calculateModifiers(rpModifiers);
-		calculateSpellCasting();
-
-		data = serializeFormData("#character-data");
-		storeData(data);
-	}, 250);
 }
 
 function buildModifiers(container, data) {
