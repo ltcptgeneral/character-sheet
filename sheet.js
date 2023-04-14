@@ -298,7 +298,7 @@ function init () {
 		calculateModifiers(rpModifiers)
 
 		data = serializeFormData("#character-data");
-		//storeData(data);
+		storeData(data);
 	}, 250);
 }
 
