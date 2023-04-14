@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<title>Character Sheet - SotSA</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -11,58 +12,51 @@
 		<main class="w3-container w3-card-4 w3-padding" style="max-width: 80ch; margin-left: auto; margin-right: auto;">
 			<h1 class="w3-center">Songs of the Second Age: Character Sheet</h1>
 			<form class="w3-container">
-				<div class="w3-container">
-					<label>Player<input class="w3-input w3-border" id="player" name="player" type="text"></label>
-					<label>Name<input class="w3-input w3-border" id="name" name="name" type="text"></label>
-					<label>Level<input class="w3-input w3-border" id="level" name="level" type="text"></label>
-					<label>Species<input class="w3-input w3-border" id="species" name="species" type="text"></label>
-					<label>Background<input class="w3-input w3-border" id="background" name="background" type="text"></label>
-					<label>Class<input class="w3-input w3-border" id="class" name="class" type="text"></label>
+				<div class="mobile grid" style="grid-template-columns: auto auto auto;">
+					<label>Player<input id="player" name="player" type="text"></label>
+					<label>Name<input id="name" name="name" type="text"></label>
+					<label>Level<input id="level" name="level" type="number"></label>
+					<label>Species<input id="species" name="species" type="text"></label>
+					<label>Background<input id="background" name="background" type="text"></label>
+					<label>Class<input id="class" name="class" type="text"></label>
 				</div>
-				<div class="w3-container">
-					<label for="health">Health</label><input class="w3-input w3-border" id="health" name="health" type="number">
-					<label for="stamina">Stamina</label><input class="w3-input w3-border" id="stamina" name="stamina" type="number">
+				<div class="mobile grid" style="grid-template-columns: auto auto;">
+					<label>Health<input id="health" name="health" type="number"></label>
+					<label>Stamina<input id="stamina" name="stamina" type="number"></label>					
+					<div class="grid" style="grid-column: 1 / span 2; grid-template-columns: auto auto auto auto auto;">
+						<label>Deathrolls</label>
+						<label>W<input id="deathroll-w" name="deathroll-w" type="checkbox"></label>
+						<label>S<input id="deathroll-s" name="deathroll-s" type="checkbox"></label>
+						<label>D<input id="deathroll-d" name="deathroll-d" type="checkbox"></label>
+						<label>I<input id="deathroll-i" name="deathroll-i" type="checkbox"></label>
+					</div>				
 				</div>
-				<div class="w3-container">
-					<label>Deathrolls</label>
-					<div class="w3-container">
-						<label>W</label><input class="w3-input w3-border" type="checkbox">
-						<label>S</label><input class="w3-input w3-border" type="checkbox">
-						<label>D</label><input class="w3-input w3-border" type="checkbox">
-						<label>I</label><input class="w3-input w3-border" type="checkbox">
-					</div>
+				<div class="mobile grid" style="grid-template-columns: repeat(6, calc((100% / 6) - 10px));">
+					<label style="flex-direction: column;"><p><u>Str</u>ength</p><input id="str" name="str" type="number"></label>
+					<label style="flex-direction: column;"><p><u>End</u>urance</p><input id="end" name="end" type="number"></label>
+					<label style="flex-direction: column;"><p><u>Agi</u>lity</p><input id="agi" name="agi" type="number"></label>
+					<label style="flex-direction: column;"><p><u>Wit</u>s</p><input id="wit" name="wit" type="number"></label>
+					<label style="flex-direction: column;"><p><u>Int</u>elligence</p><input id="int" name="int" type="number"></label>
+					<label style="flex-direction: column;"><p><u>Cha</u>risma</p><input id="cha" name="cha" type="number"></label>
 				</div>
-				<div class="w3-container">
-					<label for="str"><u>Str</u>ength</label>
-					<input class="w3-input w3-border" id="str" name="str" type="number">
-					<label for="end"><u>End</u>urance</label>
-					<input class="w3-input w3-border" id="end" name="end" type="number">
-					<label for="agi"><u>Agi</u>lity</label>
-					<input class="w3-input w3-border" id="agi" name="agi" type="number">
-					<label for="wit"><u>Wit</u>s</label>
-					<input class="w3-input w3-border" id="wit" name="wit" type="number">
-					<label for="int"><u>Int</u>elligence</label>
-					<input class="w3-input w3-border" id="int" name="int" type="number">
-					<label for="cha"><u>Cha</u>risma</label>
-					<input class="w3-input w3-border" id="cha" name="cha" type="number">
+				<div class="mobile grid" style="grid-template-columns: repeat(6, calc((100% / 6) - 10px));">
+					<label style="flex-direction: column;">Armor<input id="armor" name="armor" type="number"></label>
+					<label style="flex-direction: column;">Soak<input id="soak" name="soak" type="number"></label>
+					<label style="flex-direction: column;">Speed<input id="speed" name="speed" type="number"></label>
+					<label style="flex-direction: column;">Initiative<input id="initiative" name="initiative" type="number"></label>
+					<label style="flex-direction: column;">Mastery<input id="mastery" name="mastery" type="number"></label>
+					<label for="bulk" style="flex-direction: column;">Bulk
+						<label class="none" for="max-bulk">Max Bulk</label>
+						<div class="flex" style="flex-wrap: nowrap;">
+							<input id="bulk" name="bulk" type="number">
+							<p>/</p>
+							<input id="max-bulk" name="max-bulk" type="number">
+						</div>
+					</label>
 				</div>
-				<div class="w3-container">
-					<label for="armor">Armor</label>
-					<input class="w3-input w3-border" id="armor" name="armor" type="number">
-					<label for="soak">Soak</label>
-					<input class="w3-input w3-border" id="soak" name="soak" type="number">
-					<label for="speed">Speed</label>
-					<input class="w3-input w3-border" id="speed" name="speed" type="number">
-					<label for="initiative">Initiative</label>
-					<input class="w3-input w3-border" id="initiative" name="initiative" type="number">
-					<label for="mastery">Mastery</label>
-					<input class="w3-input w3-border" id="mastery" name="mastery" type="number">
-					<label for="bulk">Bulk</label>
-					<div style="display: flex; flex-direction: row; align-items: center;">
-						<input class="w3-input w3-border" id="bulk" name="bulk" type="number">
-						<p class="w3-margin-left w3-margin-right" style="margin: 0px;">/</p>
-						<input class="w3-input w3-border" id="max-bulk" name="max-bulk" type="number">
-					</div>
+				<div class="w3-row w3-mobile w3-row-padding w3-stretch" style="margin-top: 10px; margin-bottom: 10px;">
+					<div class="w3-half mobile grid" style="grid-template-columns: auto auto auto auto;" id="combat-modifiers"></div>
+					<div class="w3-half mobile grid" style="grid-template-columns: auto auto auto auto;" id="rp-modifiers"></div>
 				</div>
 			</form>
 		</main>

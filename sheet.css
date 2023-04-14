@@ -9,6 +9,10 @@
 	box-sizing: border-box;
 }
 
+p {
+	margin: 0px;
+}
+
 div.flex {
 	display: flex;
 	flex-direction: row;
@@ -23,6 +27,16 @@ div.grid {
 	gap: 10px;
 }
 
+div.nowrap {
+	flex-wrap: nowrap;
+}
+
+@media (max-width: 600px) {
+	div.mobile {
+		display: block;
+	}
+}
+
 body {
 	min-height: 100vh;
 	background-color: var(--background-color);
@@ -34,30 +48,44 @@ main {
 	margin-right: auto;
 	background-color: var(--page-color);
 	color: var(--text-color);
-	padding: 10px;
-	border: 1px solid var(--text-color);
 	border-radius: 10px;
-	box-shadow: 5px 5px 5px var(--shadow-color);
-	width: fit-content;
-	max-width: max(50%, 720px);
 }
 
 main > form > * {
-	margin-top: 10px;
+	border-bottom: 1px solid var(--text-color);
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+main > form > *:last-child {
+	border-bottom: none;
 }
 
 input, select {
-	width: fit-content;
+	border: none;
+	border-bottom: 1px dashed var(--text-color);
+	background-color: var(--page-color);
+	width: 100%;
 }
 
 input[type="number"] {
-	min-width: 6ch;
+	min-width: 4ch;
 }
 
-input[type="text"] {
-	min-width: 20ch;
+input[type="checkbox"] {
+	width: min-content;
+}
+
+label {
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 h1 {
 	text-align: center;
+}
+
+.none {
+	display: none;
 }
