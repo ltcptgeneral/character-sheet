@@ -1,3 +1,5 @@
+import {serializeFormData, deserializeFormData, storeData, getData} from "./utils.js";
+
 window.addEventListener("DOMContentLoaded", init);
 
 let combatModifiers = [
@@ -279,11 +281,25 @@ let features = [
 
 function init () {
 	buildModifiers("#combat-modifiers", combatModifiers);
-	window.setInterval(() => { calculateModifiers(combatModifiers) }, 250);
 	buildModifiers("#rp-modifiers", rpModifiers);
-	calculateModifiers(rpModifiers);
-	window.setInterval(() => { calculateModifiers(rpModifiers) }, 250);
 	buildFeatures("#features", features);
+
+	let data = getData();
+	deserializeFormData("#character-data", data);
+
+	calculateModifiers(combatModifiers)
+	calculateModifiers(rpModifiers)
+
+	data = serializeFormData("#character-data");
+	storeData(data);
+
+	window.setInterval(() => { 
+		calculateModifiers(combatModifiers)
+		calculateModifiers(rpModifiers)
+
+		data = serializeFormData("#character-data");
+		storeData(data);
+	}, 250);
 }
 
 function buildModifiers(container, data) {
@@ -328,7 +344,7 @@ function buildFeatures (container) {
 			<p>${feature.name}</p>
 			<p>${feature.level}</p>
 			<div class="grow-wrap">
-				<textarea id="features-${i}" placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+				<textarea id="features-${i}" name="features-${i}" placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
 			</div>
 		`;
 	}
