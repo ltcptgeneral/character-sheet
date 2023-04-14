@@ -102,7 +102,7 @@
 						<input aria-label="Debt 4" id="debts-4" name="debts-4" type="text">
 					</div>
 				</section>
-				<section class="mobile grid" style="grid-template-columns: auto auto auto auto; align-items: start;">
+				<section class="mobile grid" style="grid-template-columns: auto auto auto auto;">
 					<p style="grid-column: 1 / span 4;">Weapons</p>
 					<p>Name</p>
 					<p>Attack Bonus</p>
@@ -127,6 +127,34 @@
 				</section>
 				<section class="grow-wrap">
 					<textarea id="inventory" name="inventory" placeholder="Inventory" onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+				</section>
+			</div>
+			<div class="page w3-container w3-card-4 w3-padding-16" style="padding-left: 32px; padding-right: 32px;">
+				<h2>Spellcasting</h2>
+				<section class="grid mobile" style="grid-template-columns: auto auto auto; align-items: start;">
+					<label class="mobile" style="flex-direction: column; align-items: flex-start;">Spellcasting Attribute
+						<select id="spellcasting-attribute" name="spellcasting-attribute">
+							<option value="none"></option>
+							<option value="int">INT</option>
+							<option value="cha">CHA</option>
+						</select>
+					</label>
+					<div class="flex mobile" style="flex-direction: column; align-items: flex-start;">
+						<p>Spellcasting Modifier</p>
+						<div class="flex mobile">
+							<label>Training<input id="spellcasting-training" name="spellcasting-training" type="number"></label>
+							<label>MB<input id="spellcasting-mb" name="spellcasting-mb" type="checkbox"></label>						
+							<output id="spellcasting-modifier"></output>
+						</div>
+					</div>
+					<div class="flex mobile" style="flex-direction: column; align-items: flex-start;">
+						<p>Spell Save DC</p>
+						<output class="w3-center" id="spellcasting-dc"></output>
+					</div>
+				</section>
+				<section id="spellcasting-spells" class="grid mobile" style="grid-template-columns: auto 1fr;">
+					<p>Prep</p>
+					<p>Spell Name & Description</p>
 				</section>
 			</div>
 			</form>

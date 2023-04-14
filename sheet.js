@@ -279,23 +279,28 @@ let features = [
 	
 ]
 
+let spellSlots = 20
+
 function init () {
 	buildModifiers("#combat-modifiers", combatModifiers);
 	buildModifiers("#rp-modifiers", rpModifiers);
 	buildFeatures("#features", features);
+	buildSpells("#spellcasting-spells", spellSlots);
 
 	let data = getData();
 	deserializeFormData("#character-data", data);
 
-	calculateModifiers(combatModifiers)
+	calculateModifiers(combatModifiers);
 	calculateModifiers(rpModifiers)
+	calculateSpellCasting();;
 
 	data = serializeFormData("#character-data");
 	storeData(data);
 
 	window.setInterval(() => { 
-		calculateModifiers(combatModifiers)
-		calculateModifiers(rpModifiers)
+		calculateModifiers(combatModifiers);
+		calculateModifiers(rpModifiers);
+		calculateSpellCasting();
 
 		data = serializeFormData("#character-data");
 		storeData(data);
@@ -350,6 +355,18 @@ function buildFeatures (container) {
 	}
 }
 
+function buildSpells (container, numSpells) {
+	let area = document.querySelector(container);
+	for (let i = 0; i < numSpells; i++) {
+		area.innerHTML += `
+			<input id="spell-${i}-prep" name="spell-${i}-prep" aria-label="Spell ${i} Prepared" type="checkbox" style="margin-left: auto; margin-right: auto;">
+			<div class="grow-wrap">
+				<textarea id="spell-${i}-info" name="spell-${i}-info" placeholder="Spell Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
+			</div>
+		`;
+	}
+}
+
 function calculateModifiers (data) {
 	for (let i in data) {
 		let category = data[i];
@@ -358,6 +375,19 @@ function calculateModifiers (data) {
 			setModifierVal(category.category, item.name, item.value);
 		}
 	}
+}
+
+function calculateSpellCasting () {
+	let attribute = document.querySelector("#spellcasting-attribute").value;
+	let baseVal = 0;
+	if (attribute === "int") { baseVal =  Number(document.querySelector("#int").value); }
+	else if (attribute === "cha") { baseVal =  Number(document.querySelector("#cha").value); }
+	let training = Number(document.querySelector("#spellcasting-training").value);
+	let mb = Number(document.querySelector("#spellcasting-mb").checked);
+	let mastery = Number(document.querySelector("#mastery").value);
+	let modifier = baseVal + training + (mb * mastery);
+	document.querySelector("#spellcasting-modifier").innerText = ` = ${modifier}`;
+	document.querySelector("#spellcasting-dc").innerText = ` = ${8 + modifier}`;
 }
 
 function setModifierVal (category, name, value) {
