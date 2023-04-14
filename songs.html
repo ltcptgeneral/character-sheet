@@ -49,11 +49,10 @@
 						<label style="flex-direction: column;">Initiative<input id="initiative" name="initiative" type="number"></label>
 						<label style="flex-direction: column;">Mastery<input id="mastery" name="mastery" type="number"></label>
 						<label for="bulk" style="flex-direction: column;">Bulk
-							<label class="none" for="max-bulk">Max Bulk</label>
 							<div class="flex" style="flex-wrap: nowrap;">
 								<input id="bulk" name="bulk" type="number">
 								<p>/</p>
-								<input id="max-bulk" name="max-bulk" type="number">
+								<input aria-label="Max Bulk" id="max-bulk" name="max-bulk" type="number">
 							</div>
 						</label>
 					</section>
@@ -70,6 +69,65 @@
 			<div class="page w3-container w3-card-4 w3-padding-16">
 				<h2 class="w3-center">Character Features</h2>
 				<section class="grid" id="features" style="grid-template-columns: auto auto 1fr; column-gap: 20px; padding: 0px 16px;"></section>
+			</div>
+			<div class="page w3-container w3-card-4 w3-padding-16" style="padding-left: 32px; padding-right: 32px;">
+				<h2 class="w3-center">Character Inventory</h2>
+				<section class="mobile grid" style="grid-template-columns: 1fr auto 1fr; align-items: start;">
+					<div class="grid" style="grid-template-columns: auto auto;">
+						<p style="grid-column: 1 / span 2;">Armor & Apparel</p>
+						<p>Name</p>
+						<p>Properties</p>
+						<input aria-label="Armor 1 Name" id="armor-1-name" name="armor-1-name" type="text">
+						<input aria-label="Armor 1 Info" id="armor-1-info" name="armor-1-info" type="text">
+						<input aria-label="Armor 2 Name" id="armor-2-name" name="armor-2-name" type="text">
+						<input aria-label="Armor 2 Info" id="armor-2-info" name="armor-2-info" type="text">
+						<input aria-label="Armor 3 Name" id="armor-3-name" name="armor-3-name" type="text">
+						<input aria-label="Armor 3 Info" id="armor-3-info" name="armor-3-info" type="text">
+						<input aria-label="Armor 4 Name" id="armor-4-name" name="armor-4-name" type="text">
+						<input aria-label="Armor 4 Info" id="armor-4-info" name="armor-4-info" type="text">
+					</div>
+					<hr>
+					<div class="grid" style="grid-template-columns: auto auto;">
+						<label for="money">Money</label>
+						<input id="money" name="money" type="number">
+						<p>Incomes</p>
+						<p>Debts</p>
+						<input aria-label="Income 1" id="incomes-1" name="incomes-1" type="text">
+						<input aria-label="Debt 1" id="debts-1" name="debts-1" type="text">
+						<input aria-label="Income 2" id="incomes-2" name="incomes-2" type="text">
+						<input aria-label="Debt 2" id="debts-2" name="debts-2" type="text">
+						<input aria-label="Income 3" id="incomes-3" name="incomes-3" type="text">
+						<input aria-label="Debt 3" id="debts-3" name="debts-3" type="text">
+						<input aria-label="Income 4" id="incomes-4" name="incomes-4" type="text">
+						<input aria-label="Debt 4" id="debts-4" name="debts-4" type="text">
+					</div>
+				</section>
+				<section class="mobile grid" style="grid-template-columns: auto auto auto auto; align-items: start;">
+					<p style="grid-column: 1 / span 4;">Weapons</p>
+					<p>Name</p>
+					<p>Attack Bonus</p>
+					<p>Damage (Type)</p>
+					<p>Properties</p>
+					<input aria-label="Weapon 1 Name" id="weapons-1-name" name="weapons-1-name" type="text">
+					<input aria-label="Weapon 1 Attack Bonus" id="weapons-1-atkbonus" name="weapons-1-atkbonus" type="text">
+					<input aria-label="Weapon 1 Damage" id="weapons-1-damage" name="weapons-1-damage" type="text">
+					<input aria-label="Weapon 1 Properties" id="weapons-1-properties" name="weapons-1-properties" type="text">
+					<input aria-label="Weapon 2 Name" id="weapons-2-name" name="weapons-2-name" type="text">
+					<input aria-label="Weapon 2 Attack Bonus" id="weapons-2-atkbonus" name="weapons-2-atkbonus" type="text">
+					<input aria-label="Weapon 2 Damage" id="weapons-2-damage" name="weapons-2-damage" type="text">
+					<input aria-label="Weapon 2 Properties" id="weapons-2-properties" name="weapons-2-properties" type="text">
+					<input aria-label="Weapon 3 Name" id="weapons-3-name" name="weapons-3-name" type="text">
+					<input aria-label="Weapon 3 Attack Bonus" id="weapons-3-atkbonus" name="weapons-3-atkbonus" type="text">
+					<input aria-label="Weapon 3 Damage" id="weapons-3-damage" name="weapons-3-damage" type="text">
+					<input aria-label="Weapon 3 Properties" id="weapons-3-properties" name="weapons-3-properties" type="text">
+					<input aria-label="Weapon 4 Name" id="weapons-4-name" name="weapons-4-name" type="text">
+					<input aria-label="Weapon 4 Attack Bonus" id="weapons-4-atkbonus" name="weapons-4-atkbonus" type="text">
+					<input aria-label="Weapon 4 Damage" id="weapons-4-damage" name="weapons-4-damage" type="text">
+					<input aria-label="Weapon 4 Properties" id="weapons-4-properties" name="weapons-4-properties" type="text">
+				</section>
+				<section class="grow-wrap">
+					<textarea id="inventory" name="inventory" placeholder="Inventory" onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+				</section>
 			</div>
 			</form>
 		</main>
