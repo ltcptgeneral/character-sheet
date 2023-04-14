@@ -125,6 +125,7 @@ let rpModifiers = [
 			},
 			{
 				name: "Animal_Handling",
+				display: "Animal Handling",
 				type: "full",
 				value: function (e) { return e.WIT + e.training + (e.mb * e.mastery); }
 			},
@@ -213,7 +214,7 @@ function populateModifiers(container, data) {
 			if (item.type === "full") {
 				categoryDiv.innerHTML += `
 					<div style="display: contents;">
-						<p>${item.name}</p>
+						<p>${item.display ? item.display : item.name}</p>
 						<label>Training<input id="${category.category}-${item.name}-training" name="${category.category}-${item.name}-training" type="number"></label>
 						<label>MB<input id="${category.category}-${item.name}-mb" name="${category.category}-${item.name}-mb" type="checkbox"></label>
 						<output id="${category.category}-${item.name}-result"></output>
@@ -223,20 +224,10 @@ function populateModifiers(container, data) {
 			else if (item.type === "training-only"){
 				categoryDiv.innerHTML += `
 					<div style="display: contents;">
-						<p>${item.name}</p>
+						<p>${item.display ? item.display : item.name}</p>
 						<label style="grid-column: 2 / span 3;">Training<input id="${category.category}-${item.name}-training" name="${category.category}-${item.name}-training" type="checkbox"></label>
 						<input id="${category.category}-${item.name}-mb" name="${category.category}-${item.name}-mb" type="checkbox" hidden>
 						<output class="none" id="${category.category}-${item.name}-result"></output>
-					</div>
-				`;
-			}
-			else if (item.type === "input") {
-				categoryDiv.innerHTML += `
-					<div style="display: contents;">
-						<label>Lore<input type="text"></label>
-						<label>Training<input id="${category.category}-${item.name}-training" name="${category.category}-${item.name}-training" type="number"></label>
-						<label>MB<input id="${category.category}-${item.name}-mb" name="${category.category}-${item.name}-mb" type="checkbox"></label>
-						<output id="${category.category}-${item.name}-result"></output>
 					</div>
 				`;
 			}
