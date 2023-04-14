@@ -169,11 +169,6 @@ let rpModifiers = [
 				value: function (e) { return e.INT + e.training + (e.mb * e.mastery); }
 			},
 			{
-				name: "Lore",
-				type: "textarea",
-				value: function (e) { return e.INT + e.training + (e.mb * e.mastery); }
-			},
-			{
 				name: "Deception",
 				type: "full",
 				value: function (e) { return e.CHA + e.training + (e.mb * e.mastery); }
@@ -235,10 +230,10 @@ function populateModifiers(container, data) {
 					</div>
 				`;
 			}
-			else if (item.type === "textarea") {
+			else if (item.type === "input") {
 				categoryDiv.innerHTML += `
 					<div style="display: contents;">
-						<textarea></textarea>
+						<label>Lore<input type="text"></label>
 						<label>Training<input id="${category.category}-${item.name}-training" name="${category.category}-${item.name}-training" type="number"></label>
 						<label>MB<input id="${category.category}-${item.name}-mb" name="${category.category}-${item.name}-mb" type="checkbox"></label>
 						<output id="${category.category}-${item.name}-result"></output>
