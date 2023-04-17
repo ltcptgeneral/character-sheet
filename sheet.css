@@ -122,6 +122,10 @@ h1 {
 	display: none;
 }
 
+.hidden {
+	visibility: hidden;
+}
+
 .grow-wrap {
 	display: grid;
 }

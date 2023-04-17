@@ -10,8 +10,16 @@
 		<script src="songs-meta.js" type="module"></script>
 		<script src="songs.js" type="module"></script>
 	</head>
-	<body style="padding: 16px;">
+	<body style="padding: 0px;">
+		<header class="w3-black w3-bar w3-top">				
+			<nav class="w3-large w3-bar flex" style="align-items: center; justify-content: center;">
+				<a class="w3-bar-item w3-mobile w3-button" href="songs.html" aria-current="true">Character Sheet</a>
+				<a class="w3-bar-item w3-mobile w3-button" href="settings.html" aria-current="true">Settings</a>
+				<a class="w3-bar-item w3-mobile w3-button" href="focus.html" aria-current="true">Focus Mode</a>
+			</nav>
+		</header>
 		<main>
+			<div class="w3-large w3-bar flex hidden"><a class="w3-bar-item w3-mobile w3-button">&hearts;</a></div>
 			<form id="character-data" style="display: contents;">
 			<div class="page w3-container w3-card-4 w3-padding-16">
 				<h1 class="w3-center">Songs of the Second Age: Character Sheet</h1>
