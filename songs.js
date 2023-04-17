@@ -70,8 +70,8 @@ function buildFeatures (container) {
 	for (let i in features) {
 		let feature = features[i];
 		area.innerHTML += `
-			<p>${feature.name}</p>
-			<p>${feature.level}</p>
+			<p class="w3-hide-small">${feature.name}</p>
+			<p class="w3-hide-small">${feature.level}</p>
 			<div class="grow-wrap">
 				<textarea id="features-${i}" name="features-${i}" placeholder="Feature Name & Description" onInput="this.parentNode.dataset.replicatedValue = this.value" rows="1"></textarea>
 			</div>
@@ -110,8 +110,8 @@ function calculateSpellCasting () {
 	let mb = Number(document.querySelector("#spellcasting-mb").checked);
 	let mastery = Number(document.querySelector("#mastery").value);
 	let modifier = baseVal + training + (mb * mastery);
-	document.querySelector("#spellcasting-modifier").innerText = ` = ${modifier}`;
-	document.querySelector("#spellcasting-dc").innerText = ` = ${8 + modifier}`;
+	document.querySelector("#spellcasting-modifier").innerHTML = `=&nbsp;${modifier}`;
+	document.querySelector("#spellcasting-dc").innerHTML = `=&nbsp;${8 + modifier}`;
 }
 
 function setModifierVal (category, name, value) {
@@ -125,5 +125,5 @@ function setModifierVal (category, name, value) {
 	e.training = Number(document.querySelector(`#${category}-${name}-training`).value);
 	e.mb = Number(document.querySelector(`#${category}-${name}-mb`).checked);
 	e.mastery = Number(document.querySelector("#mastery").value);
-	document.querySelector(`#${category}-${name}-result`).innerText = ` = ${value(e)}`;
+	document.querySelector(`#${category}-${name}-result`).innerHTML = `=&nbsp;${value(e)}`;
 }

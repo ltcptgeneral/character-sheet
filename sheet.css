@@ -102,6 +102,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 input[type=number] {
 	-moz-appearance: textfield;
+	min-width: 2ch;
 }
 
 input[type="checkbox"] {
@@ -130,6 +131,13 @@ h1 {
 	display: grid;
 }
 
+@media (max-width: 600px) {
+	.grow-wrap {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+}
+
 .grow-wrap::after {
 	content: attr(data-replicated-value) " ";
 	white-space: pre-wrap;
@@ -147,4 +155,8 @@ h1 {
 	font: inherit;
 	background-color: var(--page-color);
 	grid-area: 1 / 1 / 2 / 2;
+}
+
+output {
+	min-width: 4ch;
 }

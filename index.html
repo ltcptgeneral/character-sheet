@@ -19,7 +19,11 @@
 			</nav>
 		</header>
 		<main>
-			<div class="w3-large w3-bar flex hidden"><a class="w3-bar-item w3-mobile w3-button">&hearts;</a></div>
+			<div class="w3-large w3-bar flex hidden">
+				<a class="w3-bar-item w3-mobile w3-button">&hearts;</a>
+				<a class="w3-bar-item w3-mobile w3-button">&hearts;</a>
+				<a class="w3-bar-item w3-mobile w3-button">&hearts;</a>
+			</div>
 			<form id="character-data" style="display: contents;">
 			<div class="page w3-container w3-card-4 w3-padding-16">
 				<h1 class="w3-center">Songs of the Second Age: Character Sheet</h1>
@@ -77,7 +81,7 @@
 			</div>
 			<div class="page w3-container w3-card-4 w3-padding-16">
 				<h2 class="w3-center">Character Features</h2>
-				<section class="grid" id="features" style="grid-template-columns: auto auto 1fr; column-gap: 20px; padding: 0px 16px;"></section>
+				<section class="mobile grid" id="features" style="grid-template-columns: auto auto 1fr; column-gap: 20px; padding: 0px 16px;"></section>
 			</div>
 			<div class="page w3-container w3-card-4 w3-padding-16" style="padding-left: 32px; padding-right: 32px;">
 				<h2 class="w3-center">Character Inventory</h2>
@@ -161,7 +165,7 @@
 						<output class="w3-center" id="spellcasting-dc"></output>
 					</div>
 				</section>
-				<section id="spellcasting-spells" class="grid mobile" style="grid-template-columns: auto 1fr;">
+				<section id="spellcasting-spells" class="grid" style="grid-template-columns: auto 1fr;">
 					<p>Prep</p>
 					<p>Spell Name & Description</p>
 				</section>
